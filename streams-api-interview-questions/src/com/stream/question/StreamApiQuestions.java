@@ -60,10 +60,19 @@ public class StreamApiQuestions {
 
 		/* Solution: */
 		System.out.println(evenNumbSquarSum.stream().filter(e -> e% 2 == 0).collect(Collectors.summingInt(e -> e*e)));
+		System.out.println(evenNumbSquarSum.stream().filter(e -> e% 2 == 0).mapToInt(e -> e*e).sum());
 
 		// Expected: 220
 		
+// 5.  Use Stream API to match the expected pattern.
 
+		/* Given List: */
+		String countChars = "AANKKIIITGGGUPTA";
+
+		/* Solution: */
+		System.out.println(Arrays.asList(countChars.chars().distinct().count()));
+
+		// Expected: 2A3B1C
 	}
 
 }
