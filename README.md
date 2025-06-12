@@ -31,9 +31,5 @@ Stream API Question for Interview in Service based companies
                 "It supports functional-style operations on streams of elements, such as map-reduce transformations.",
                 "In this exercise, you need to count the total number of words in all sentences."
         );
-
-		/* Solution: */
-		System.out.println(sentences
-				.stream().flatMap(e -> Arrays.stream(e.split(" "))).distinct().collect(Collectors.toList()));
-
+		/* Solution: See the project*/
 		// Expected: 37
