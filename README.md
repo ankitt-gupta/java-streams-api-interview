@@ -23,3 +23,17 @@ Stream API Question for Interview in Service based companies
 		// Expected: 7
 
 
+// 3. Use Stream API to count the total number of distinct words (case-insensitive) in all the sentences.
+
+		/* Given List: */
+		List<String> sentences = Arrays.asList(
+                "Java Stream API provides a fluent interface for processing sequences of elements.",
+                "It supports functional-style operations on streams of elements, such as map-reduce transformations.",
+                "In this exercise, you need to count the total number of words in all sentences."
+        );
+
+		/* Solution: */
+		System.out.println(sentences
+				.stream().flatMap(e -> Arrays.stream(e.split(" "))).distinct().collect(Collectors.toList()));
+
+		// Expected: 37
