@@ -53,6 +53,17 @@ public class StreamApiQuestions {
 
 		// Expected: bananacherry
 
+// 5.  Use Stream API to find the sum of the squares of even numbers in the list.
+
+		/* Given List: */
+		List<Integer> evenNumbSquarSum = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+		/* Solution: */
+		System.out.println(evenNumbSquarSum.stream().filter(e -> e% 2 == 0).collect(Collectors.summingInt(e -> e*e)));
+
+		// Expected: 220
+		
+
 	}
 
 }

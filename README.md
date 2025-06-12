@@ -42,7 +42,13 @@ Stream API Question for Interview in Service based companies
 		/* Solution: See the project*/
 		// Expected: bananacherry
 		
-//5. 
+//5.  Use Stream API to find the sum of the squares of even numbers in the list.
+
+		/* Given List: */
+		List<Integer> evenNumbSquarSum = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+		/* Solution: See the project*/
+		// Expected: 220
 
 
 		
