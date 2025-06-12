@@ -33,3 +33,16 @@ Stream API Question for Interview in Service based companies
         );
 		/* Solution: See the project*/
 		// Expected: 37
+
+//4.  Use Stream API to find the concatenation of the first two words that have even lengths.
+
+		/* Given List: */
+		List<String> words = Arrays.asList("apple", "banana", "cherry", "date", "elderberry");
+
+		/* Solution: See the project*/
+		// Expected: bananacherry
+		
+//5. 
+
+
+		

@@ -27,22 +27,31 @@ public class StreamApiQuestions {
 		System.out.println(names.stream().map(e -> e.length()).max(Comparator.naturalOrder()).get());
 
 		// Expected: 7
-		
+
 // 3. Use Stream API to count the total number of distinct words (case-insensitive) in all the sentences.
 
 		/* Given List: */
 		List<String> sentences = Arrays.asList(
-                "Java Stream API provides a fluent interface for processing sequences of elements.",
-                "It supports functional-style operations on streams of elements, such as map-reduce transformations.",
-                "In this exercise, you need to count the total number of words in all sentences."
-        );
+				"Java Stream API provides a fluent interface for processing sequences of elements.",
+				"It supports functional-style operations on streams of elements, such as map-reduce transformations.",
+				"In this exercise, you need to count the total number of words in all sentences.");
 
 		/* Solution: */
-		System.out.println(sentences
-				.stream().flatMap(e -> Arrays.stream(e.split(" "))).distinct().collect(Collectors.toList()));
+		System.out.println(
+				sentences.stream().flatMap(e -> Arrays.stream(e.split(" "))).distinct().collect(Collectors.toList()));
 
 		// Expected: 37
-		
+
+//4.  Use Stream API to find the concatenation of the first two words that have even lengths.
+
+		/* Given List: */
+		List<String> words = Arrays.asList("apple", "banana", "cherry", "date", "elderberry");
+
+		/* Solution: */
+		System.out.println(words.stream().filter(e -> e.length() % 2 == 0).limit(2)
+				.collect(Collectors.joining()));
+
+		// Expected: bananacherry
 
 	}
 
