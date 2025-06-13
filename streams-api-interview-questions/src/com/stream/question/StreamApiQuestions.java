@@ -138,7 +138,12 @@ public class StreamApiQuestions {
 
 		//Expected: {New York=32.5, London=27.5, Paris=28.0}
 
-//9.  
+//9.  Finding the Oldest Person: Given the list of Person objects, find the oldest person. 
+//	  If there are multiple people with the same maximum age, you can return any one of them (or an Optional<Person>)
+
+		System.out.println(people.stream().max(Comparator.comparingInt(Person::getAge)).map(e -> e.age).get());
+		
+		//Expected: 35
 
 
 
