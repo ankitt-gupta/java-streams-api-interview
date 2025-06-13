@@ -51,4 +51,65 @@ Stream API Question for Interview in Service based companies
 		// Expected: 220
 
 
+//6.  System.out.println(" Given a list of strings, count how many of them have a length greater than 5.");
+		/* Given List: */
+        List<String> wordss = Arrays.asList("apple", "banana", "kiwi", "orange", "grape", "strawberry");
+        
+        /* Solution: */
+        System.out.println(wordss.stream().filter(e -> e.length() > 5).collect(Collectors.toList()));
+        System.out.println(wordss.stream().filter(e -> e.length() > 5).count());
+
+        //Expected: [apple, banana, orange, grape, strawberry]
+      //Expected: 5
+	 
+//7.  Filtering by City: Given the list of Person objects, "
+		// filter out the people who live in 'New York' and "
+		// collect their names into a new list.
+
+		class Person {
+			String name;
+			int age;
+			String city;
+
+			public Person(String name, int age, String city) {
+				this.name = name;
+				this.age = age;
+				this.city = city;
+			}
+
+			public String getName() {
+				return name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public int getAge() {
+				return age;
+			}
+
+			public void setAge(int age) {
+				this.age = age;
+			}
+
+			public String getCity() {
+				return city;
+			}
+
+			public void setCity(String city) {
+				this.city = city;
+			}
+
+		}
+
+		List<Person> people = Arrays.asList(new Person("Alice", 30, "New York"), new Person("Bob", 25, "London"),
+				new Person("Charlie", 35, "New York"), new Person("David", 28, "Paris"),
+				new Person("Eve", 30, "London"));
+
+		System.out.println(
+				people.stream().filter(e -> e.city.equals("New York")).map(e -> e.getName()).collect(Collectors.toList()));
+
+//8. 
 		
+			 
