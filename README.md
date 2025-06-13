@@ -52,18 +52,16 @@ Stream API Question for Interview in Service based companies
 
 
 //6.  System.out.println(" Given a list of strings, count how many of them have a length greater than 5.");
-		/* Given List: */
-        List<String> wordss = Arrays.asList("apple", "banana", "kiwi", "orange", "grape", "strawberry");
-        
-        /* Solution: */
-        System.out.println(wordss.stream().filter(e -> e.length() > 5).collect(Collectors.toList()));
-        System.out.println(wordss.stream().filter(e -> e.length() > 5).count());
 
+        /* Given List: */
+        List<String> wordss = Arrays.asList("apple", "banana", "kiwi", "orange", "grape", "strawberry");
+ 
+        /* Solution: */
         //Expected: [apple, banana, orange, grape, strawberry]
-      //Expected: 5
+        //Expected: 5
 	 
-//7.  Filtering by City: Given the list of Person objects, "
-		// filter out the people who live in 'New York' and "
+//7.  Filtering by City: Given the list of Person objects,
+		// filter out the people who live in 'New York' and
 		// collect their names into a new list.
 
 		class Person {
