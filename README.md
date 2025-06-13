@@ -111,7 +111,7 @@ Stream API Question for Interview in Service based companies
 //8.  Finding the Average Age by City: Given the list of Person objects, 
 //	  calculate the average age of people living in each city and store the result in a Map<String, Double>.
 
-class Person {
+        class Person {
 			String name;
 			int age;
 			String city;
