@@ -101,13 +101,58 @@ Stream API Question for Interview in Service based companies
 
 		}
 
+        /* Given List: */
 		List<Person> people = Arrays.asList(new Person("Alice", 30, "New York"), new Person("Bob", 25, "London"),
 				new Person("Charlie", 35, "New York"), new Person("David", 28, "Paris"),
 				new Person("Eve", 30, "London"));
 
-		System.out.println(
-				people.stream().filter(e -> e.city.equals("New York")).map(e -> e.getName()).collect(Collectors.toList()));
+        //Expected: [Alice, Charlie]
 
-//8. 
+//8.  Finding the Average Age by City: Given the list of Person objects, 
+//	  calculate the average age of people living in each city and store the result in a Map<String, Double>.
+
+class Person {
+			String name;
+			int age;
+			String city;
+
+			public Person(String name, int age, String city) {
+				this.name = name;
+				this.age = age;
+				this.city = city;
+			}
+
+			public String getName() {
+				return name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public int getAge() {
+				return age;
+			}
+
+			public void setAge(int age) {
+				this.age = age;
+			}
+
+			public String getCity() {
+				return city;
+			}
+
+			public void setCity(String city) {
+				this.city = city;
+			}
+
+		}
+
+        /* Given List: */
+		List<Person> people = Arrays.asList(new Person("Alice", 30, "New York"), new Person("Bob", 25, "London"),
+				new Person("Charlie", 35, "New York"), new Person("David", 28, "Paris"),
+				new Person("Eve", 30, "London"));
+
+		//Expected: {New York=32.5, London=27.5, Paris=28.0}
 		
 			 
