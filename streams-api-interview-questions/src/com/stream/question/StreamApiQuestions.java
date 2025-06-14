@@ -334,7 +334,14 @@ public class StreamApiQuestions {
 		
 		//Expected: {0=[2,3], 10=[10,14], 20=[20,24], 30=[30,34], 40=[40,44], 50=[50,54] }
 
-//22.  
+//22.  Given a list of strings, create a list that contains only integers
+
+	//Given: 
+	String[] sing = {"abc", "123", "456", "xyz"};
+	System.out.println(
+						Arrays.stream(sing).filter(e -> e.matches("[0-9]+")).map(Integer::valueOf).collect(Collectors.toList())
+						);
+	//Expected: [123, 456]
  
 		 
 		 
