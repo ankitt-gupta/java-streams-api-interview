@@ -211,5 +211,11 @@ Stream API Question for Interview in Service based companies
 		
 		//Expected: [[1,3,5,7], [2,4,6,8]]
 
+//16.  Given a word, find the occurrence of each character
 
+		// Given: 
+		String a = "Mississippi";
+		
+		//Expected: {p=2, s=4, i=4, M=1}
 
+//17.  

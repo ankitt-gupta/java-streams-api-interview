@@ -243,16 +243,30 @@ public class StreamApiQuestions {
 		System.out.println(Arrays.stream(a).boxed().collect(Collectors.partitioningBy(e -> e % 2 == 0)).values()
 				.stream().collect(Collectors.toList()));
 		// 2nd way
-			Map<Boolean, List<Integer>> intList =	Arrays.stream(a).boxed().collect(Collectors.partitioningBy(e -> e % 2 == 0));
+		Map<Boolean, List<Integer>> intList = Arrays.stream(a).boxed()
+				.collect(Collectors.partitioningBy(e -> e % 2 == 0));
 
-			System.out.println(
-					intList.values().stream().collect(Collectors.toList()) 
-					+ " OR " +
-					intList.entrySet().stream().map(e -> e.getValue()).collect(Collectors.toList())
-				);
+		System.out.println(intList.values().stream().collect(Collectors.toList()) + " OR "
+				+ intList.entrySet().stream().map(e -> e.getValue()).collect(Collectors.toList()));
 		// Expected: [[1,3,5,7], [2,4,6,8]]
 
+//16.  Given a word, find the occurrence of each character
 
+		// Given:
+		String str = "Mississippi";
+		
+		//1st way
+		System.out.println(
+				Arrays.stream(str.split("")).collect(Collectors.groupingBy(e -> e)).entrySet().stream().map((e) -> {
+					return e.getKey() + "=" + e.getValue().size();
+				}).collect(Collectors.toList()));
+		
+		//2nd way
+		System.out.println(
+				Arrays.stream(str.split("")).collect(Collectors.groupingBy(e -> e, Collectors.counting()))
+		);
+		
+		// Expected: {p=2, s=4, i=4, M=1}
 
 	}
 
