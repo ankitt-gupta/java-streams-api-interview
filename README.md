@@ -191,4 +191,11 @@ Stream API Question for Interview in Service based companies
         String s = "I am learing Streams API in Java";
         //Expected: Streams
 
-//13.  
+//13.  Given a sentence, find the occurrence of each word
+
+		// Given:
+		String sent = "I am learning Streams API in Java Java";
+		// Expected: {Java:2, in:1, API:1, streams:1, learning:1, am:1, I:1} 
+
+
+

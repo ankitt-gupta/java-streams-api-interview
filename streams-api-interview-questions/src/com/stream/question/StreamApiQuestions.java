@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class StreamApiQuestions {
@@ -208,6 +209,19 @@ public class StreamApiQuestions {
 		System.out.println(Arrays.stream(s2.split(" ")).sorted(Comparator.comparing(String::length).reversed()).skip(1)
 				.findFirst().get());
 		// Expected: Streams
+		
+//13.    Given a sentence, find the occurrence of each word
+
+		// Given:
+		String sent = "I am learning Streams API in Java Java";
+		
+		//Ist way
+		System.out.println(Arrays.stream(sent.split(" ")).collect(Collectors.groupingBy(e -> e, Collectors.counting())));
+		
+		//2nd way: 
+		System.out.println(Arrays.stream(sent.split(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())));
+
+		// Expected: {Java:2, in:1, API:1, streams:1, learning:1, am:1, I:1} 
 
 	}
 
