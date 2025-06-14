@@ -196,6 +196,15 @@ Stream API Question for Interview in Service based companies
 		// Given:
 		String sent = "I am learning Streams API in Java Java";
 		// Expected: {Java:2, in:1, API:1, streams:1, learning:1, am:1, I:1} 
+		
+//14.  Given a sentence, find the words with a specified number of vowels and words with exacly output no. of vowels
+
+		//Given: specified number of vowles: 2
+		String sen = "I am learning Streams API in Java";
+		
+		//Expected: Stream, Java, API  -> contains 2 vowles
+
+
 
 
 

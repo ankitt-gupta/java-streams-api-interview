@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class StreamApiQuestions {
@@ -223,6 +224,17 @@ public class StreamApiQuestions {
 
 		// Expected: {Java:2, in:1, API:1, streams:1, learning:1, am:1, I:1} 
 
+//14.  Given a sentence, find the words with a specified number of vowels and words with exacly output no. of vowels
+
+		//Given: number of vowels: 2
+		String sen = "I am learning Streams API in Java";
+		
+		System.out.println(
+				Arrays.stream(sen.split(" "))
+				.filter(e -> e.replaceAll("[^aeiouAEIOU]", "").length()==2).collect(Collectors.joining(" "))
+				);
+		//Expected: Stream, Java, API
+		
 		
 	}
 
