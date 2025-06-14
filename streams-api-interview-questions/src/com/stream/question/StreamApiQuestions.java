@@ -317,7 +317,25 @@ public class StreamApiQuestions {
 		 );
 
 		// Expected:e
+
+//21.   Given an array of integers, group the numbers by the rangein which they belong
+
+		//Given:
+		int[] arry = {2,3,10,14,20,24,30,34,40,44,50,54};
+	System.out.println(
+		Arrays.stream(arry).boxed().collect(Collectors.toList())
+		.stream().collect(
+				Collectors.groupingBy(
+						e -> e/10*10,
+						LinkedHashMap::new,
+						Collectors.toList()
+						))
+			);
 		
+		//Expected: {0=[2,3], 10=[10,14], 20=[20,24], 30=[30,34], 40=[40,44], 50=[50,54] }
+
+//22.  
+ 
 		 
 		 
 		 
