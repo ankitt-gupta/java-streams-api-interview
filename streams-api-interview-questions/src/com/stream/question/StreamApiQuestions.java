@@ -191,12 +191,16 @@ public class StreamApiQuestions {
 		String s = "dabcadefg";
 		// First way:
 		s.chars().distinct().forEach(e -> System.out.print((char) e));
+		System.out.println("");  // added System.out.println(""); to saparate previous output
 		// Second Way:
-		System.out.println("");
 		s.chars().distinct().mapToObj(e -> (char)e).forEach(System.out::print);
-		// 3rd Way:
 		System.out.println("");
+		// 3rd Way:
 		Arrays.stream(s.split("")).distinct().forEach(System.out::print);
+		System.out.println("");
+		//EPAM interview asked way
+		String l =  Arrays.stream(s.split("")).distinct().collect(Collectors.joining());
+        System.out.println(l);
 		// Expected: dabcefg
 
 	}
