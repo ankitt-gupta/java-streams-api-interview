@@ -1,13 +1,10 @@
 package com.stream.question;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.ToDoubleBiFunction;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class StreamApiQuestions {
@@ -191,17 +188,26 @@ public class StreamApiQuestions {
 		String s = "dabcadefg";
 		// First way:
 		s.chars().distinct().forEach(e -> System.out.print((char) e));
-		System.out.println("");  // added System.out.println(""); to saparate previous output
+		System.out.println(""); // added System.out.println(""); to saparate previous output
 		// Second Way:
-		s.chars().distinct().mapToObj(e -> (char)e).forEach(System.out::print);
+		s.chars().distinct().mapToObj(e -> (char) e).forEach(System.out::print);
 		System.out.println("");
 		// 3rd Way:
 		Arrays.stream(s.split("")).distinct().forEach(System.out::print);
 		System.out.println("");
-		//EPAM interview asked way
-		String l =  Arrays.stream(s.split("")).distinct().collect(Collectors.joining());
-        System.out.println(l);
+		// EPAM interview asked way
+		String l = Arrays.stream(s.split("")).distinct().collect(Collectors.joining());
+		System.out.println(l);
 		// Expected: dabcefg
+
+//12.   Find the word that has the second or nth highest length
+
+		// Given:
+		String s2 = "I am learning Streams API in Java";
+
+		System.out.println(Arrays.stream(s2.split(" ")).sorted(Comparator.comparing(String::length).reversed()).skip(1)
+				.findFirst().get());
+		// Expected: Streams
 
 	}
 

@@ -184,3 +184,11 @@ Stream API Question for Interview in Service based companies
         String s = "dabcadefg";
         
         //Expected: dabcefg
+
+//12.   Find the word that has the second or nth highest length
+
+        //Given: 
+        String s = "I am learing Streams API in Java";
+        //Expected: Streams
+
+//13.  
