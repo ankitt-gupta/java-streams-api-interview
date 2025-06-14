@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -289,16 +290,21 @@ public class StreamApiQuestions {
 							);
 		//Expected: 22
 		
-//19. Given a string, find the first non-repeated character
+// 19. Given a string, find the first non-repeated character
 
-		//Given: 
-		String ss = "HHeello  WWorrld";
-		System.out.println(
-				Arrays.stream(ss.split("")).filter(e -> ss.indexOf(e) == ss.lastIndexOf(e)).findFirst().get()
-				//.collect(Collectors.joining())
-				);
-		//Expected: H
-		
+		// Given:
+		String ss = "HHeello  Worrld";
+
+		// 1st way
+		System.out
+				.println(Arrays.stream(ss.split("")).filter(e -> ss.indexOf(e) == ss.lastIndexOf(e)).findFirst().get());
+
+		// 2nd way
+		System.out.println(Arrays.stream(ss.split(""))
+				.collect(Collectors.groupingBy(e -> e, LinkedHashMap::new, Collectors.counting())).entrySet().stream()
+				.filter(e -> e.getValue() == 1).map(e -> e.getKey()).findFirst().get());
+		// Expected:W
+
 //20. 
 
 
