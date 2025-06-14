@@ -355,10 +355,20 @@ public class StreamApiQuestions {
 			                .reduce((xx, yy) -> xx*yy) // Optional<Integer> (contains 60)
 			                .get()
 							);
-		
 		//Expected: 60
 	
-//24.  
+//24.  Group /Pair anagrams froma list of strings. For 1 word consider only 1 anagram.
+
+		// Given
+		String[] ssss = { "pat", "tap", "pan", "nap", "Team", "tree", "meat" };
+		System.out
+				.println(Arrays.stream(ssss)
+						.collect(Collectors.groupingBy(
+								e -> Arrays.stream(e.toLowerCase().split("")).sorted().collect(Collectors.toList())))
+						.values());
+
+		// Expected: [[pan,nap], [pat, tap], [Team, meat], [tree]]
+
 		 
 		 
 		 

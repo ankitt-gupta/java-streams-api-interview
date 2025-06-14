@@ -267,6 +267,18 @@ Stream API Question for Interview in Service based companies
 	
 	//Expected: 60
 	
+//24.  Group /Pair anagrams froma list of strings. For 1 word consider only 1 anagram.
+       
+	   //Given
+	   String[] ssss = {"pat", "tap", "pan", "nap",
+					  "Team", "tree", "meat"};
+	   //Expected: [[pan,nap], [pat, tap], [Team, meat], [tree]]
+
+//25.
+
+
+
+
 
 
 
