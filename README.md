@@ -218,4 +218,13 @@ Stream API Question for Interview in Service based companies
 		
 		//Expected: {p=2, s=4, i=4, M=1}
 
-//17.  
+//17.  Arrange the numbers in Descending/Ascending Order
+	
+	   // Given: 
+		int[] numI= {1, 2, 3, 4, 5};
+		
+		// Expected: 12345 / 54321
+
+		
+		
+		

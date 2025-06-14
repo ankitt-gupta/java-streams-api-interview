@@ -1,5 +1,6 @@
 package com.stream.question;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -267,6 +268,17 @@ public class StreamApiQuestions {
 		);
 		
 		// Expected: {p=2, s=4, i=4, M=1}
+		
+//17.  Arrange the numbers in Descending/Ascending Order
+		
+	   // Given: 
+		int[] numI= {1, 2, 4, 3, 5};
+		System.out.println(
+							Arrays.stream(numI).boxed().sorted(Comparator.comparing(Function.identity())).collect(Collectors.toList())
+							+" / "+
+							Arrays.stream(numI).boxed().sorted(Comparator.reverseOrder()).collect(Collectors.toList())
+							);
+		// Expected: 12345 / 54321
 
 	}
 
