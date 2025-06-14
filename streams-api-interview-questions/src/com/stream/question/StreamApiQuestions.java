@@ -336,14 +336,29 @@ public class StreamApiQuestions {
 
 //22.  Given a list of strings, create a list that contains only integers
 
-	//Given: 
-	String[] sing = {"abc", "123", "456", "xyz"};
-	System.out.println(
-						Arrays.stream(sing).filter(e -> e.matches("[0-9]+")).map(Integer::valueOf).collect(Collectors.toList())
-						);
-	//Expected: [123, 456]
- 
-		 
+		//Given: 
+		String[] sing = {"abc", "123", "456", "xyz"};
+		System.out.println(
+							Arrays.stream(sing).filter(e -> e.matches("[0-9]+")).map(Integer::valueOf).collect(Collectors.toList())
+							);
+		//Expected: [123, 456]
+
+	
+//23.  Find the products of the first two elements in an array.
+	
+		//Given:
+		int[] arrr = {12,5,6,9,2,4};
+		System.out.println(
+							Arrays.stream(arrr) // IntStream
+			                .boxed()      // Stream<Integer>
+			                .limit(2)     // Stream<Integer> with first 2 elements: {12, 5}
+			                .reduce((xx, yy) -> xx*yy) // Optional<Integer> (contains 60)
+			                .get()
+							);
+		
+		//Expected: 60
+	
+//24.  
 		 
 		 
 		 
