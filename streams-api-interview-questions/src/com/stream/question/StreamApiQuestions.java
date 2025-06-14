@@ -210,32 +210,50 @@ public class StreamApiQuestions {
 		System.out.println(Arrays.stream(s2.split(" ")).sorted(Comparator.comparing(String::length).reversed()).skip(1)
 				.findFirst().get());
 		// Expected: Streams
-		
+
 //13.    Given a sentence, find the occurrence of each word
 
 		// Given:
 		String sent = "I am learning Streams API in Java Java";
-		
-		//Ist way
-		System.out.println(Arrays.stream(sent.split(" ")).collect(Collectors.groupingBy(e -> e, Collectors.counting())));
-		
-		//2nd way: 
-		System.out.println(Arrays.stream(sent.split(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())));
 
-		// Expected: {Java:2, in:1, API:1, streams:1, learning:1, am:1, I:1} 
+		// Ist way
+		System.out
+				.println(Arrays.stream(sent.split(" ")).collect(Collectors.groupingBy(e -> e, Collectors.counting())));
+
+		// 2nd way:
+		System.out.println(Arrays.stream(sent.split(" "))
+				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting())));
+
+		// Expected: {Java:2, in:1, API:1, streams:1, learning:1, am:1, I:1}
 
 //14.  Given a sentence, find the words with a specified number of vowels and words with exacly output no. of vowels
 
-		//Given: number of vowels: 2
+		// Given: number of vowels: 2
 		String sen = "I am learning Streams API in Java";
-		
-		System.out.println(
-				Arrays.stream(sen.split(" "))
-				.filter(e -> e.replaceAll("[^aeiouAEIOU]", "").length()==2).collect(Collectors.joining(" "))
+
+		System.out.println(Arrays.stream(sen.split(" ")).filter(e -> e.replaceAll("[^aeiouAEIOU]", "").length() == 2)
+				.collect(Collectors.joining(" ")));
+		// Expected: Stream, Java, API
+
+//15.  Given a list of Integers, divide it into two lists one having an even number and the other having an odd number
+
+		// Given:
+		int[] a = { 1, 2, 3, 4, 5, 6, 7, 8 };
+		// one way
+		System.out.println(Arrays.stream(a).boxed().collect(Collectors.partitioningBy(e -> e % 2 == 0)).values()
+				.stream().collect(Collectors.toList()));
+		// 2nd way
+			Map<Boolean, List<Integer>> intList =	Arrays.stream(a).boxed().collect(Collectors.partitioningBy(e -> e % 2 == 0));
+
+			System.out.println(
+					intList.values().stream().collect(Collectors.toList()) 
+					+ " OR " +
+					intList.entrySet().stream().map(e -> e.getValue()).collect(Collectors.toList())
 				);
-		//Expected: Stream, Java, API
-		
-		
+		// Expected: [[1,3,5,7], [2,4,6,8]]
+
+
+
 	}
 
 }

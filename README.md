@@ -204,7 +204,12 @@ Stream API Question for Interview in Service based companies
 		
 		//Expected: Stream, Java, API  -> contains 2 vowles
 
-
+//15.  Given a list of Integers, divide it into two lists one having an even number and the other having an odd number
+		
+		// Given: 
+		int[] a = {1, 2, 3, 4, 5, 6, 7, 8};
+		
+		//Expected: [[1,3,5,7], [2,4,6,8]]
 
 
 
