@@ -288,6 +288,18 @@ public class StreamApiQuestions {
 							Arrays.stream(arr).distinct().sum()
 							);
 		//Expected: 22
+		
+//19. Given a string, find the first non-repeated character
+
+		//Given: 
+		String ss = "HHeello  WWorrld";
+		System.out.println(
+				Arrays.stream(ss.split("")).filter(e -> ss.indexOf(e) == ss.lastIndexOf(e)).findFirst().get()
+				//.collect(Collectors.joining())
+				);
+		//Expected: H
+		
+//20. 
 
 
 		

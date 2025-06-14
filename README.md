@@ -232,7 +232,13 @@ Stream API Question for Interview in Service based companies
 		
 		//Expected: 22
 
-//19.  		
+//19. Given a string, find the first non-repeated character
+
+		//Given: 
+		String ss = "HHello World";
+		
+		//Expected: e	
+
 		
 		
 		
