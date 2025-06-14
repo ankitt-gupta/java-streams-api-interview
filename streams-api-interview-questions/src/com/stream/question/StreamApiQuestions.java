@@ -153,75 +153,51 @@ public class StreamApiQuestions {
 		// Expected: 35
 
 //10.  Sort by age
-		
+
 		Map<Integer, List<Person>> people2 = new HashMap<>();
-        people2.put(1, Arrays.asList(new Person("Alice", 31, "New York"), new Person("Alice", 30, "New York")));
-        people2.put(2, Arrays.asList(new Person("Alice", 32, "New York"), new Person("Alice", 33, "New York")));
-        people2.put(3, Arrays.asList(new Person("Alice", 35, "New York"), new Person("Alice", 34, "New York")));
-        people2.put(4, Arrays.asList(new Person("Alice", 36, "New York"), new Person("Alice", 37, "New York")));
-        people2.put(5, Arrays.asList(new Person("Alice", 38, "New York"), new Person("Alice", 39, "New York")));
+		people2.put(1, Arrays.asList(new Person("Alice", 31, "New York"), new Person("Alice", 30, "New York")));
+		people2.put(2, Arrays.asList(new Person("Alice", 32, "New York"), new Person("Alice", 33, "New York")));
+		people2.put(3, Arrays.asList(new Person("Alice", 35, "New York"), new Person("Alice", 34, "New York")));
+		people2.put(4, Arrays.asList(new Person("Alice", 36, "New York"), new Person("Alice", 37, "New York")));
+		people2.put(5, Arrays.asList(new Person("Alice", 38, "New York"), new Person("Alice", 39, "New York")));
 
-        System.out.println("Original Map:");
-        people2.forEach((key, value) -> System.out.println(key + ": " + value));
-        System.out.println("----------------------------------------");
+		System.out.println("Original Map:");
+		people2.forEach((key, value) -> System.out.println(key + ": " + value));
+		System.out.println("----------------------------------------");
 
-        // Sort the List<Person> within each map entry by age (Ascending)
-        Map<Integer, List<Person>> mapWithListsSortedByAgeAsc = people2.entrySet().stream()
-                .collect(Collectors.toMap(
-                        Map.Entry::getKey, 										 // Keep the original key
-                        entry -> entry.getValue().stream() 						 // Get the list of people
-                                .sorted(Comparator.comparingInt(Person::getAge)) // Sort people in the list by age
-                                .collect(Collectors.toList()), 					 // Collect the sorted people back into a new list
-                        (oldValue, newValue) -> oldValue, 						 // Merge function for duplicate keys (not relevant here as keys are unique)
-                        HashMap::new 											 
-                        // You can use HashMap or LinkedHashMap if you want to preserve iteration order based on key insertion
-                        // HashMap doesn't guarantee order of its entries, but the lists within will be sorted.
-                ));
+		// Sort the List<Person> within each map entry by age (Ascending)
+		Map<Integer, List<Person>> mapWithListsSortedByAgeAsc = people2.entrySet().stream()
+				.collect(Collectors.toMap(Map.Entry::getKey, // Keep the original key
+						entry -> entry.getValue().stream() // Get the list of people
+								.sorted(Comparator.comparingInt(Person::getAge)) // Sort people in the list by age
+								.collect(Collectors.toList()), // Collect the sorted people back into a new list
+						(oldValue, newValue) -> oldValue, // Merge function for duplicate keys (not relevant here as
+															// keys are unique)
+						HashMap::new
+				// You can use HashMap or LinkedHashMap if you want to preserve iteration order
+				// based on key insertion
+				// HashMap doesn't guarantee order of its entries, but the lists within will be
+				// sorted.
+				));
 
-        System.out.println("\nMap with internal lists sorted by Age (Ascending):");
-        mapWithListsSortedByAgeAsc.forEach((key, value) -> System.out.println(key + ": " + value));
-       
-        System.out.println("----------------------------------------");
-        
-        
-        
-        
-        
-//		System.out.println(people2.get(1).stream()
-//				.collect(Collectors.toMap(Person::getAge, Person::getCity)
-//						));
+		System.out.println("\nMap with internal lists sorted by Age (Ascending):");
+		mapWithListsSortedByAgeAsc.forEach((key, value) -> System.out.println(key + ": " + value));
 
-		
-		//				sorted(Comparator.comparing(Person::getAge)).collect(Collectors.toList()));	
+		System.out.println("----------------------------------------");
 
-		
-		
-		
-//		 Map<String, List<Person>> peopleByCity = people.stream()
-//		            .collect(Collectors.groupingBy(Person::getCity));
-//		System.out.println("People grouped by city:");
-//        peopleByCity.forEach((city, personList) -> {
-//            System.out.println(city + ": " + personList);
-//        });
-//
-//     // Option 1: Using Name as Key (assuming unique names)
-//        Map<String, Person> peopleByName = people.stream()
-//            .collect(Collectors.toMap(Person::getName, person -> person));
-//
-//        System.out.println("\nPeople by name:");
-//        peopleByName.forEach((name, person) -> {
-//            System.out.println(name + ": " + person);
-//        });
+//11.  Remove duplicates from String and returns in the same order   
 
-		//// 5. Use Stream API to match the expected pattern.
-		//
-//        		/* Given List: */
-//        		String countChars = "AANKKIIITGGGUPTA";
-		//
-//        		/* Solution: */
-//        		System.out.println(countChars.chars().collect(null, null, null));
-		//
-//        		// Expected: 2A3B1C
+		// Given:
+		String s = "dabcadefg";
+		// First way:
+		s.chars().distinct().forEach(e -> System.out.print((char) e));
+		// Second Way:
+		System.out.println("");
+		s.chars().distinct().mapToObj(e -> (char)e).forEach(System.out::print);
+		// 3rd Way:
+		System.out.println("");
+		Arrays.stream(s.split("")).distinct().forEach(System.out::print);
+		// Expected: dabcefg
 
 	}
 

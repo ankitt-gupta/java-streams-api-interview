@@ -177,3 +177,10 @@ Stream API Question for Interview in Service based companies
 				4: [Person{name='Alice', age=36, city='New York'}, Person{name='Alice', age=37, city='New York'}]
 				5: [Person{name='Alice', age=38, city='New York'}, Person{name='Alice', age=39, city='New York'}]
 				----------------------------------------
+
+//11.  Remove duplicates from String and returns in the same order   
+
+        //Given:
+        String s = "dabcadefg";
+        
+        //Expected: dabcefg
