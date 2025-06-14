@@ -161,4 +161,19 @@ Stream API Question for Interview in Service based companies
 
 		//Expected: 35
 
-			 
+//10.  Sort by age
+
+		Map<Integer, List<Person>> people2 = new HashMap<>();
+        people2.put(1, Arrays.asList(new Person("Alice", 31, "New York"), new Person("Alice", 30, "New York")));
+        people2.put(2, Arrays.asList(new Person("Alice", 32, "New York"), new Person("Alice", 33, "New York")));
+        people2.put(3, Arrays.asList(new Person("Alice", 35, "New York"), new Person("Alice", 34, "New York")));
+        people2.put(4, Arrays.asList(new Person("Alice", 36, "New York"), new Person("Alice", 37, "New York")));
+        people2.put(5, Arrays.asList(new Person("Alice", 38, "New York"), new Person("Alice", 39, "New York")));	
+
+        //Expected: Map with internal lists sorted by Age (Ascending):
+				1: [Person{name='Alice', age=30, city='New York'}, Person{name='Alice', age=31, city='New York'}]
+				2: [Person{name='Alice', age=32, city='New York'}, Person{name='Alice', age=33, city='New York'}]
+				3: [Person{name='Alice', age=34, city='New York'}, Person{name='Alice', age=35, city='New York'}]
+				4: [Person{name='Alice', age=36, city='New York'}, Person{name='Alice', age=37, city='New York'}]
+				5: [Person{name='Alice', age=38, city='New York'}, Person{name='Alice', age=39, city='New York'}]
+				----------------------------------------
