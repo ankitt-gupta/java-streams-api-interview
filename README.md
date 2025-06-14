@@ -237,8 +237,14 @@ Stream API Question for Interview in Service based companies
 		//Given: 
 		String ss = "HHello World";
 		
-		//Expected: e	
+		//Expected: e
 
+//20.  Given a string, find the first repeated character
+
+		// Given:
+		 String sss = "Heello  Worrld";
+
+		// Expected:e
 		
 		
 		

@@ -1,6 +1,7 @@
 package com.stream.question;
 
 import java.lang.reflect.Array;
+import java.security.Identity;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -305,10 +306,35 @@ public class StreamApiQuestions {
 				.filter(e -> e.getValue() == 1).map(e -> e.getKey()).findFirst().get());
 		// Expected:W
 
-//20. 
-
-
+//20.  Given a string, find the first repeated character
 		
+		// Given:
+		 String sss = "Heello  Worrld";
+		 System.out.println(
+		 Arrays.stream(sss.split("")).collect(Collectors.groupingBy(Function.identity(),
+				 LinkedHashMap::new,
+				 Collectors.counting())).entrySet().stream().filter(e -> e.getValue() > 1).map(e -> e.getKey()).findFirst().get()
+		 );
+
+		// Expected:e
+		
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
 	}
 
 }
