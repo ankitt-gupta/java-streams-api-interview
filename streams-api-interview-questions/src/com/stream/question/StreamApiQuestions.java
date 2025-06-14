@@ -280,6 +280,17 @@ public class StreamApiQuestions {
 							);
 		// Expected: 12345 / 54321
 
+//18.  Given an array, find the sum of unique elements
+		
+		//Given: 
+		int[] arr = {1,6,7,8,1,1,8,8,7};
+		System.out.println(
+							Arrays.stream(arr).distinct().sum()
+							);
+		//Expected: 22
+
+
+		
 	}
 
 }

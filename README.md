@@ -225,6 +225,14 @@ Stream API Question for Interview in Service based companies
 		
 		// Expected: 12345 / 54321
 
+//18.  Given an array, find the sum of unique elements
+		
+		//Given: 
+		int[] arr = {1,6,7,8,1,1,8,8,7};
+		
+		//Expected: 22
+
+//19.  		
 		
 		
 		
