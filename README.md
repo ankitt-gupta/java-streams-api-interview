@@ -181,9 +181,9 @@
 
 12.   Find the word that has the second or nth highest length
 
-		 //Given:
-		 String s = "I am learing Streams API in Java";
-		 //Expected: Streams
+			 //Given:
+			 String s = "I am learing Streams API in Java";
+			 //Expected: Streams
 
 13.  Given a sentence, find the occurrence of each word
 
