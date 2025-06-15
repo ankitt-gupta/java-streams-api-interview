@@ -1,7 +1,7 @@
 # Stream API Question for Interview in Service based companies
 
 
-## 1. Use Stream API to square each number in the list and collect the result into a new list.
+1. Use Stream API to square each number in the list and collect the result into a new list.
 
 		/* Given List: */
 
@@ -11,7 +11,7 @@
 
         // Expected: [1, 4, 9, 16, 25]
 
-// 2. Use Stream API to find the length of the longest name in the list.
+2. Use Stream API to find the length of the longest name in the list.
 
 		/* Given List: */
 
