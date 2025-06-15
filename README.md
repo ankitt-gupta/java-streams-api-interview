@@ -229,10 +229,10 @@
 
 19. Given a string, find the first non-repeated character
 
-		//Given: 
-		String ss = "HHello World";
+		 //Given: 
+		 String ss = "HHello World";
 		
-		//Expected: e
+		 //Expected: e
 
 20.  Given a string, find the first repeated character
 
