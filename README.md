@@ -181,9 +181,9 @@
 
 12.   Find the word that has the second or nth highest length
 
-         //Given: 
-         String s = "I am learing Streams API in Java";
-         //Expected: Streams
+		 //Given:
+		 String s = "I am learing Streams API in Java";
+		 //Expected: Streams
 
 13.  Given a sentence, find the occurrence of each word
 
@@ -244,7 +244,7 @@
 
 		 //Given:
 		 int[] arry = {2,3,10,14,20,24,30,34,40,44,50,54};
-
+		 
 		 //Expected: {0=[2,3], 10=[10,14], 20=[20,24], 30=[30,34], 40=[40,44], 50=[50,54] }
 
 22.  Given a list of strings, create a list that contains only integers
