@@ -250,10 +250,10 @@
 
 22.  Given a list of strings, create a list that contains only integers
 
-	//Given:
-	String[] sing = {"abc", "123", "456", "xyz"};
-	
-	//Expected: [123, 456]
+		//Given:
+		String[] sing = {"abc", "123", "456", "xyz"};
+		
+		//Expected: [123, 456]
 
 23.  Find the products of the first two elements in an array.
 
