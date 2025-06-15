@@ -237,8 +237,8 @@
 20.  Given a string, find the first repeated character
 
 		// Given:
-		 String sss = "Heello  Worrld";
-
+		String sss = "Heello  Worrld";
+		 
 		// Expected:e
 
 21.   Given an array of integers, group the numbers by the rangein which they belong
