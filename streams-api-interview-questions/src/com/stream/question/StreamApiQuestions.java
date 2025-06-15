@@ -2,6 +2,7 @@ package com.stream.question;
 
 import java.lang.reflect.Array;
 import java.security.Identity;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -11,6 +12,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class StreamApiQuestions {
 
@@ -369,7 +371,21 @@ public class StreamApiQuestions {
 
 		// Expected: [[pan,nap], [pat, tap], [Team, meat], [tree]]
 
-//25.  
+//25.  Write a stream program to multiply alternative numbers in an array
+
+		// Given:
+		int[] ar = { 4, 5, 1, 7, 2, 9, 2, 3, 3};
+
+		
+		
+		System.out.println(IntStream.range(0, ar.length)
+									.filter(e -> e%2==0)
+									.map(e -> ar[e])
+									.reduce((x, y) -> x * y)
+		);
+		// Expected: 48
+
+//26. 
 
 		 
 		 

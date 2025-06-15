@@ -268,8 +268,14 @@
 					  "Team", "tree", "meat"};
 	     //Expected: [[pan,nap], [pat, tap], [Team, meat], [tree]]
 
-25.
+25.  Write a stream program to multiply alternative numbers in an array
 
+			//Given:
+			int[] ar = {4,5,1,7,2,9,2};
+			
+			//Expected: 48
+
+26.  
 
 
 
