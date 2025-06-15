@@ -385,9 +385,18 @@ public class StreamApiQuestions {
 		);
 		// Expected: 48
 
-//26. 
+//26. Write a program to multiply 1st and last element, 2nd and 2nd last element etc.
 
-		 
+		// Given:
+		int[] ar2 = { 4, 5, 1, 7, 2, 9};
+		IntStream.range(0, ar2.length/2)
+				 .map(e -> ar2[e]*ar2[ar2.length-e-1])
+				 .forEach(System.out::println);
+		// Expected:36
+		//			10
+		//			7
+		
+//27.  
 		 
 		 
 		 
