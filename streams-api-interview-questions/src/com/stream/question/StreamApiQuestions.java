@@ -369,6 +369,8 @@ public class StreamApiQuestions {
 
 		// Expected: [[pan,nap], [pat, tap], [Team, meat], [tree]]
 
+//25.  
+
 		 
 		 
 		 

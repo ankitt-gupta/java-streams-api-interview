@@ -1,4 +1,4 @@
-Stream API Question for Interview in Service based companies
+# Stream API Question for Interview in Service based companies
 
 
 // 1. Use Stream API to square each number in the list and
