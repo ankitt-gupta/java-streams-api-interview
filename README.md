@@ -279,16 +279,18 @@
 
 			// Given:
 			int[] ar2 = { 4, 5, 1, 7, 2, 9};
-			IntStream.range(0, ar2.length/2)
-					 .map(e -> ar2[e]*ar2[ar2.length-e-1])
-					 .forEach(System.out::println);
+
 			// Expected:36
 			//			10
 			//			7
 
-27. 		
+27. Write a stream program to move all zero’s to beginning of array
 
+			// Given:
+			int[] a27 = { 5, 0, 1, 0, 8, 0 };
+			// Expected: {0,0,0,5,1,8}
 
+28. 
 
 
 

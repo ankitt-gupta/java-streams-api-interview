@@ -1,8 +1,5 @@
 package com.stream.question;
 
-import java.lang.reflect.Array;
-import java.security.Identity;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -10,7 +7,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -259,40 +255,34 @@ public class StreamApiQuestions {
 
 		// Given:
 		String str = "Mississippi";
-		
-		//1st way
+
+		// 1st way
 		System.out.println(
 				Arrays.stream(str.split("")).collect(Collectors.groupingBy(e -> e)).entrySet().stream().map((e) -> {
 					return e.getKey() + "=" + e.getValue().size();
 				}).collect(Collectors.toList()));
-		
-		//2nd way
-		System.out.println(
-				Arrays.stream(str.split("")).collect(Collectors.groupingBy(e -> e, Collectors.counting()))
-		);
-		
+
+		// 2nd way
+		System.out.println(Arrays.stream(str.split("")).collect(Collectors.groupingBy(e -> e, Collectors.counting())));
+
 		// Expected: {p=2, s=4, i=4, M=1}
-		
+
 //17.  Arrange the numbers in Descending/Ascending Order
-		
-	   // Given: 
-		int[] numI= {1, 2, 4, 3, 5};
-		System.out.println(
-							Arrays.stream(numI).boxed().sorted(Comparator.comparing(Function.identity())).collect(Collectors.toList())
-							+" / "+
-							Arrays.stream(numI).boxed().sorted(Comparator.reverseOrder()).collect(Collectors.toList())
-							);
+
+		// Given:
+		int[] numI = { 1, 2, 4, 3, 5 };
+		System.out.println(Arrays.stream(numI).boxed().sorted(Comparator.comparing(Function.identity()))
+				.collect(Collectors.toList()) + " / "
+				+ Arrays.stream(numI).boxed().sorted(Comparator.reverseOrder()).collect(Collectors.toList()));
 		// Expected: 12345 / 54321
 
 //18.  Given an array, find the sum of unique elements
-		
-		//Given: 
-		int[] arr = {1,6,7,8,1,1,8,8,7};
-		System.out.println(
-							Arrays.stream(arr).distinct().sum()
-							);
-		//Expected: 22
-		
+
+		// Given:
+		int[] arr = { 1, 6, 7, 8, 1, 1, 8, 8, 7 };
+		System.out.println(Arrays.stream(arr).distinct().sum());
+		// Expected: 22
+
 // 19. Given a string, find the first non-repeated character
 
 		// Given:
@@ -309,56 +299,44 @@ public class StreamApiQuestions {
 		// Expected:W
 
 //20.  Given a string, find the first repeated character
-		
+
 		// Given:
-		 String sss = "Heello  Worrld";
-		 System.out.println(
-		 Arrays.stream(sss.split("")).collect(Collectors.groupingBy(Function.identity(),
-				 LinkedHashMap::new,
-				 Collectors.counting())).entrySet().stream().filter(e -> e.getValue() > 1).map(e -> e.getKey()).findFirst().get()
-		 );
+		String sss = "Heello  Worrld";
+		System.out.println(Arrays.stream(sss.split(""))
+				.collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
+				.entrySet().stream().filter(e -> e.getValue() > 1).map(e -> e.getKey()).findFirst().get());
 
 		// Expected:e
 
 //21.   Given an array of integers, group the numbers by the rangein which they belong
 
-		//Given:
-		int[] arry = {2,3,10,14,20,24,30,34,40,44,50,54};
-	System.out.println(
-		Arrays.stream(arry).boxed().collect(Collectors.toList())
-		.stream().collect(
-				Collectors.groupingBy(
-						e -> e/10*10,
-						LinkedHashMap::new,
-						Collectors.toList()
-						))
-			);
-		
-		//Expected: {0=[2,3], 10=[10,14], 20=[20,24], 30=[30,34], 40=[40,44], 50=[50,54] }
+		// Given:
+		int[] arry = { 2, 3, 10, 14, 20, 24, 30, 34, 40, 44, 50, 54 };
+		System.out.println(Arrays.stream(arry).boxed().collect(Collectors.toList()).stream()
+				.collect(Collectors.groupingBy(e -> e / 10 * 10, LinkedHashMap::new, Collectors.toList())));
+
+		// Expected: {0=[2,3], 10=[10,14], 20=[20,24], 30=[30,34], 40=[40,44],
+		// 50=[50,54] }
 
 //22.  Given a list of strings, create a list that contains only integers
 
-		//Given: 
-		String[] sing = {"abc", "123", "456", "xyz"};
-		System.out.println(
-							Arrays.stream(sing).filter(e -> e.matches("[0-9]+")).map(Integer::valueOf).collect(Collectors.toList())
-							);
-		//Expected: [123, 456]
+		// Given:
+		String[] sing = { "abc", "123", "456", "xyz" };
+		System.out.println(Arrays.stream(sing).filter(e -> e.matches("[0-9]+")).map(Integer::valueOf)
+				.collect(Collectors.toList()));
+		// Expected: [123, 456]
 
-	
 //23.  Find the products of the first two elements in an array.
-	
-		//Given:
-		int[] arrr = {12,5,6,9,2,4};
-		System.out.println(
-							Arrays.stream(arrr) // IntStream
-			                .boxed()      // Stream<Integer>
-			                .limit(2)     // Stream<Integer> with first 2 elements: {12, 5}
-			                .reduce((xx, yy) -> xx*yy) // Optional<Integer> (contains 60)
-			                .get()
-							);
-		//Expected: 60
-	
+
+		// Given:
+		int[] arrr = { 12, 5, 6, 9, 2, 4 };
+		System.out.println(Arrays.stream(arrr) // IntStream
+				.boxed() // Stream<Integer>
+				.limit(2) // Stream<Integer> with first 2 elements: {12, 5}
+				.reduce((xx, yy) -> xx * yy) // Optional<Integer> (contains 60)
+				.get());
+		// Expected: 60
+
 //24.  Group /Pair anagrams froma list of strings. For 1 word consider only 1 anagram.
 
 		// Given
@@ -374,44 +352,43 @@ public class StreamApiQuestions {
 //25.  Write a stream program to multiply alternative numbers in an array
 
 		// Given:
-		int[] ar = { 4, 5, 1, 7, 2, 9, 2, 3, 3};
+		int[] ar = { 4, 5, 1, 7, 2, 9, 2, 3, 3 };
 
-		
-		
-		System.out.println(IntStream.range(0, ar.length)
-									.filter(e -> e%2==0)
-									.map(e -> ar[e])
-									.reduce((x, y) -> x * y)
-		);
+		System.out
+				.println(IntStream.range(0, ar.length).filter(e -> e % 2 == 0).map(e -> ar[e]).reduce((x, y) -> x * y));
 		// Expected: 48
 
 //26. Write a program to multiply 1st and last element, 2nd and 2nd last element etc.
 
 		// Given:
-		int[] ar2 = { 4, 5, 1, 7, 2, 9};
-		IntStream.range(0, ar2.length/2)
-				 .map(e -> ar2[e]*ar2[ar2.length-e-1])
-				 .forEach(System.out::println);
+		int[] ar2 = { 4, 5, 1, 7, 2, 9 };
+		IntStream.range(0, ar2.length / 2).map(e -> ar2[e] * ar2[ar2.length - e - 1]).forEach(System.out::println);
 		// Expected:36
-		//			10
-		//			7
+		// 10
+		// 7
+
+//27.  Write a stream program to move all zero’s to beginning of array
+
+		// Given:
+		int[] a27 = { 5, 0, 1, 0, 8, 0 };
+		// Expected: {0,0,0,5,1,8}
+
+		List<Integer> a27ZeroList = Arrays.stream(a27).boxed().collect(Collectors.toList()).stream().filter(e -> e == 0)
+				.collect(Collectors.toList());
+		List<Integer> a277NonZeroList = Arrays.stream(a27).boxed().collect(Collectors.toList()).stream()
+				.filter(e -> e != 0).collect(Collectors.toList());
+		a27ZeroList.addAll(a277NonZeroList);
+
+		System.out.println(a27ZeroList.stream().collect(Collectors.toList()));
+
+		// Second Way:
+//		Map<Boolean, List<Integer>> a27Map = Arrays.stream(a27).boxed().collect(Collectors.partitioningBy(e -> e != 0));
+		System.out.println(Arrays.stream(a27).boxed().collect(Collectors.partitioningBy(e -> e != 0)).values().stream()
+				.flatMap(e -> e.stream()).collect(Collectors.toList()));
+
+//28. 
+
 		
-//27.  
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
 	}
 
 }
