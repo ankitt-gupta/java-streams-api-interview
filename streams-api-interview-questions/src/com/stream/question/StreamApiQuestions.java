@@ -445,6 +445,22 @@ public class StreamApiQuestions {
 		    .map(e -> e.replaceAll("[^0-9]", "")) //"[a-z]" or "[^0-9]"
 		    . collect(Collectors.toList())
 				);
+
+//34. Find and print strings containing only digits.
+
+		//Given: 
+		List<String> list34 = Arrays.asList("123","abc","123abc","45");
+		//Expected: [123,45]
+		
+		System.out.println(
+		list34.stream()
+		      .filter(e -> e.matches("[0-9]+"))
+		      .collect(Collectors.toList())
+		);
+		
+		
+		
+		
 		
 	}
 

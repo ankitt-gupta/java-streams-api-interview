@@ -327,9 +327,13 @@
 			List<String> list = Arrays.asList("a1b2c3", "1a2b3c", "123abc");
 			//Expected: O/P: [123, 123, 123]
 
-34.
+34. Find and print strings containing only digits.
 
+			//Given: 
+			List<String> list34 = Arrays.asList("123","abc","123abc","45");
+			//Expected: [123,45]
 
+35. 
 
 
 
