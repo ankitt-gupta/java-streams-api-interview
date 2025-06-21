@@ -433,6 +433,11 @@ public class StreamApiQuestions {
 		//OR
 		System.out.println("Better Approach : " + 
 				list32.stream().sorted().skip(k-1).findFirst().get());
+
+//33. 
+
+		
+		
 	}
 
 }
