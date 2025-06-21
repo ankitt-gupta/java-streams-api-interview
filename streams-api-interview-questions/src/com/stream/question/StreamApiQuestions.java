@@ -484,7 +484,7 @@ public class StreamApiQuestions {
 		//Expected O/P: [3, 5]
 		
 		System.out.println(
-		list37.stream().filter(listt37::contains).collect(Collectors.toList())
+		list37.stream().filter(e -> listt37.contains(e)).collect(Collectors.toList())
 				);
 
 //38. 
