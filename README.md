@@ -339,7 +339,10 @@
 			List<String> list35 = Arrays.asList("breaking bad", "game of thrones", "big bang theory");
 			//Expected O/P: [BREAKING BAD, GAME OF THRONES, BIG BANG THEORY]
 
-36. 
+36. Calculate the average of all the numbers.
 
+			//Given I/P: 
+			List<Integer> list36 = Arrays.asList(1,2,3,4,5);
+			//Expected O/P: 3.0
 
-
+37. 

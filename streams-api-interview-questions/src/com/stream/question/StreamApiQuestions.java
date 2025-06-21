@@ -467,9 +467,16 @@ public class StreamApiQuestions {
 		list35.stream().map(e -> e.toUpperCase()).collect(Collectors.toList())
 		);
 		
-		
-		
-		
+//36. Calculate the average of all the numbers.
+
+		//Given I/P: 
+		List<Integer> list36 = Arrays.asList(1,2,3,4,5);
+		//Expected O/P: 3.0
+		System.out.println(
+				list36.stream().mapToInt(e -> e).average().getAsDouble()
+				);
+
+//37. 
 		
 	}
 
