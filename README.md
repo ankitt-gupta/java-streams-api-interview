@@ -310,10 +310,10 @@
 
 32. Find the kth smallest element in a list of integers.
 
-			Given I/P: 
+			//Given I/P: 
 			List<Integer> list1 = Arrays.asList(7,1,6,2,1,3,4,5);
 			k=3
-			Expected O/P: [2]
+			//Expected O/P: [2]
 
 33.
 
