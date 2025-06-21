@@ -333,9 +333,13 @@
 			List<String> list34 = Arrays.asList("123","abc","123abc","45");
 			//Expected: [123,45]
 
-35. 
+35. Convert a list of strings to uppercase.
 
+			//Given I/P: 
+			List<String> list35 = Arrays.asList("breaking bad", "game of thrones", "big bang theory");
+			//Expected O/P: [BREAKING BAD, GAME OF THRONES, BIG BANG THEORY]
 
+36. 
 
 
 

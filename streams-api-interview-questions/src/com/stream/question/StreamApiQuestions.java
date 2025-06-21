@@ -457,6 +457,15 @@ public class StreamApiQuestions {
 		      .filter(e -> e.matches("[0-9]+"))
 		      .collect(Collectors.toList())
 		);
+
+//35. Convert a list of strings to uppercase.
+
+		//Given I/P: 
+		List<String> list35 = Arrays.asList("breaking bad", "game of thrones", "big bang theory");
+		//Expected O/P: [BREAKING BAD, GAME OF THRONES, BIG BANG THEORY]
+		System.out.println(
+		list35.stream().map(e -> e.toUpperCase()).collect(Collectors.toList())
+		);
 		
 		
 		
