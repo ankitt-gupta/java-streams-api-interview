@@ -321,7 +321,13 @@
 			k=3
 			//Expected O/P: [2]
 
-33.
+33. Remove all non-numeric characters from a list.
+
+			//Given I/P:
+			List<String> list = Arrays.asList("a1b2c3", "1a2b3c", "123abc");
+			//Expected: O/P: [123, 123, 123]
+
+34.
 
 
 
