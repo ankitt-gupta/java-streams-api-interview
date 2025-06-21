@@ -386,9 +386,25 @@ public class StreamApiQuestions {
 		System.out.println(Arrays.stream(a27).boxed().collect(Collectors.partitioningBy(e -> e != 0)).values().stream()
 				.flatMap(e -> e.stream()).collect(Collectors.toList()));
 
-//28. 
+//28.  In a given array of integers, return true if it contains distinct values
 
-		
+		// Give:
+		int[] a28 = { 5, 0, 1, 0, 8, 0 };
+		// Expected: false
+		System.out.println(
+				Arrays.stream(a28).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+						.values().stream().noneMatch(e -> e > 1));
+
+//29.  Given the string[] group the strings based on the middle character
+
+		// Given:
+		String[] str29 = { "ewe", "jjj", "jhj", "kwk", "aha" };
+		// Expected: O/P: { w = [ewe, kwk], h = [jhj, aha], j = [jjj] }
+
+		System.out.println(Arrays.stream(str29).collect(
+				Collectors.groupingBy(e -> e.charAt(e.length() / 2), LinkedHashMap::new, Collectors.toList())));
+
+//30. 
 	}
 
 }
