@@ -1,5 +1,6 @@
 package com.stream.question;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -487,7 +488,56 @@ public class StreamApiQuestions {
 		list37.stream().filter(e -> listt37.contains(e)).collect(Collectors.toList())
 				);
 
-//38. 
+//38. There is a list of Employee objects having field name and email. Find the list of domains( gmail.com, yahoo.com etc.)
+//		And the occurrences of each domain.
+
+		class Employee {
+			String name;
+			String email;
+			public Employee(String name, String email) {
+				this.name = name;
+				this.email = email;
+			}
+			public String getName() {
+				return name;
+			}
+			public void setName(String name) {
+				this.name = name;
+			}
+			public String getEmail() {
+				return email;
+			}
+			public void setEmail(String email) {
+				this.email = email;
+			}
+			@Override
+			public String toString() {
+				return "Employee [name=" + name + ", email=" + email + "]";
+			}			
+		}
+		
+		//Given emp object:
+		Employee e1 = new Employee("Sam", "sam@gmail.com");
+		Employee e2 = new Employee("Adam", "adam@yahoo.com");
+		Employee e3 = new Employee("Peter", "peter@gmail.com");
+		//Expected: [@gmail.com = 2, @yahoo.com = 1]
+		
+		List<Employee> employees38 = new ArrayList<>();
+		employees38.add(e1);
+		employees38.add(e2);
+		employees38.add(e3);
+		
+		System.out.println(" -- " +
+		employees38.stream()
+				   .map(e -> e.getEmail().substring(e.getEmail().indexOf("@")))
+				   .collect(Collectors.groupingBy(
+						   Function.identity(),
+						   Collectors.counting()
+				))
+		);
+		
+		
+		
 		
 	}
 

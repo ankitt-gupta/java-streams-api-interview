@@ -352,4 +352,40 @@
 			List<Integer> listt37 = Arrays.asList(3,5,6,7);
 			//Expected O/P: [3, 5]
 
-38. 
+38. There is a list of Employee objects having field name and email. Find the list of domains( gmail.com, yahoo.com etc.)
+And the occurrences of each domain.
+
+			//Given emp object:
+
+			class Employee {
+			String name;
+			String email;
+			public Employee(String name, String email) {
+				this.name = name;
+				this.email = email;
+			}
+			public String getName() {
+				return name;
+			}
+			public void setName(String name) {
+				this.name = name;
+			}
+			public String getEmail() {
+				return email;
+			}
+			public void setEmail(String email) {
+				this.email = email;
+			}
+			@Override
+			public String toString() {
+				return "Employee [name=" + name + ", email=" + email + "]";
+			}			
+			}
+
+			Employee e1 = new Employee("Sam", "sam@gmail.com");
+			Employee e2 = new Employee("Adam", "adam@yahoo.com");
+			Employee e3 = new Employee("Peter", "peter@gmail.com");
+			//Expected: [@gmail.com = 2, @yahoo.com = 1]
+
+
+39.  
