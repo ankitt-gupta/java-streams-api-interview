@@ -345,4 +345,11 @@
 			List<Integer> list36 = Arrays.asList(1,2,3,4,5);
 			//Expected O/P: 3.0
 
-37. 
+37. Find the intersection of two lists using Java streams
+
+			//Given I/P: 
+			List<Integer> list37 = Arrays.asList(1,2,3,4,5);
+			List<Integer> listt37 = Arrays.asList(3,5,6,7);
+			//Expected O/P: [3, 5]
+
+38. 

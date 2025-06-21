@@ -476,7 +476,18 @@ public class StreamApiQuestions {
 				list36.stream().mapToInt(e -> e).average().getAsDouble()
 				);
 
-//37. 
+//37. Find the intersection of two lists using Java streams
+
+		//Given I/P: 
+		List<Integer> list37 = Arrays.asList(1,2,3,4,5);
+		List<Integer> listt37 = Arrays.asList(3,5,6,7);
+		//Expected O/P: [3, 5]
+		
+		System.out.println(
+		list37.stream().filter(listt37::contains).collect(Collectors.toList())
+				);
+
+//38. 
 		
 	}
 
