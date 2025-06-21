@@ -302,10 +302,20 @@
 			List<Integer> num30 = Arrays.asList(1,2,3,4,5);
 			//Expected: O/P: 15
 
-31. 
+31. Sort a list of strings in alphabetical order.
 
+			//Given I/P: 
+			List<String> str31 = Arrays.asList("Zudio", "Puma", "Addidas", "MAC", "H&M");
+			//O/P: [Addidas, H&M, MAC, Puma, Zudio]
 
+32. Find the kth smallest element in a list of integers.
 
+			Given I/P: 
+			List<Integer> list1 = Arrays.asList(7,1,6,2,1,3,4,5);
+			k=3
+			Expected O/P: [2]
+
+33.
 
 
 

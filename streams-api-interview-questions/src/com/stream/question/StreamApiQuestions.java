@@ -414,8 +414,25 @@ public class StreamApiQuestions {
 		//2nd way:
 		System.out.println("Find the sum of all the elements in a list : " + num30.stream().mapToInt(e->e).sum());
 
-//31. 
+//31. Sort a list of strings in alphabetical order.
+
+		//Given I/P: 
+		List<String> str31 = Arrays.asList("Zudio", "Puma", "Addidas", "MAC", "H&M");
+		//O/P: [Addidas, H&M, MAC, Puma, Zudio]
 		
+		System.out.println(str31.stream().sorted().collect(Collectors.toList()));
+
+//32. Find the kth smallest element in a list of integers.
+
+		//Given I/P: 
+		List<Integer> list32 = Arrays.asList(7,1,6,2,1,3,4,5);
+		int k = 3;
+		//Expected O/P: [2]
+		System.out.println(
+		list32.stream().sorted().collect(Collectors.toList()).subList(k-1, k));
+		//OR
+		System.out.println("Better Approach : " + 
+				list32.stream().sorted().skip(k-1).findFirst().get());
 	}
 
 }
