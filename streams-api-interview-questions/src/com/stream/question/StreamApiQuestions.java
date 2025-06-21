@@ -409,9 +409,13 @@ public class StreamApiQuestions {
 		// Given:
 		List<Integer> num30 = Arrays.asList(1, 2, 3, 4, 5);
 		// Expected: O/P: 15
-		System.out.println(num30.stream().collect(Collectors.summingInt(e -> e)));
+		System.out.println( "Find the sum of all the elements in a list : " + num30.stream().collect(Collectors.summingInt(e -> e)));
+		
+		//2nd way:
+		System.out.println("Find the sum of all the elements in a list : " + num30.stream().mapToInt(e->e).sum());
 
 //31. 
+		
 	}
 
 }
