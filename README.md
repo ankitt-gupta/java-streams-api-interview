@@ -281,8 +281,8 @@
 			int[] ar2 = { 4, 5, 1, 7, 2, 9};
 
 			// Expected:36
-			//			10
-			//			7
+			//          10
+			//          7
 
 27. Write a stream program to move all zero’s to beginning of array
 
@@ -296,7 +296,13 @@
 			String[] str29 = { "ewe", "jjj", "jhj", "kwk", "aha" };
 			// Expected: O/P: { w = [ewe, kwk], h = [jhj, aha], j = [jjj] }
 
-30.
+30. Find the sum of all the elements in a list.
+
+			//Given:
+			List<Integer> num30 = Arrays.asList(1,2,3,4,5);
+			//Expected: O/P: 15
+
+31. 
 
 
 

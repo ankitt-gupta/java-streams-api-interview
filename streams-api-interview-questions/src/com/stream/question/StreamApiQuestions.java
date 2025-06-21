@@ -404,7 +404,14 @@ public class StreamApiQuestions {
 		System.out.println(Arrays.stream(str29).collect(
 				Collectors.groupingBy(e -> e.charAt(e.length() / 2), LinkedHashMap::new, Collectors.toList())));
 
-//30. 
+//30. Find the sum of all the elements in a list.
+
+		// Given:
+		List<Integer> num30 = Arrays.asList(1, 2, 3, 4, 5);
+		// Expected: O/P: 15
+		System.out.println(num30.stream().collect(Collectors.summingInt(e -> e)));
+
+//31. 
 	}
 
 }
