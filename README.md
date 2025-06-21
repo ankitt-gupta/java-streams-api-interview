@@ -290,6 +290,12 @@
 			int[] a27 = { 5, 0, 1, 0, 8, 0 };
 			// Expected: {0,0,0,5,1,8}
 
+28. In a given array of integers, return true if it contains distinct values
+
+			// Give:
+			int[] a28 = { 5, 0, 1, 0, 8, 0 };
+			// Expected: false
+
 29.  Given the string[] group the strings based on the middle character
 
 			// Given:
