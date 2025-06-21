@@ -388,4 +388,19 @@ And the occurrences of each domain.
 			//Expected: [@gmail.com = 2, @yahoo.com = 1]
 
 
-39.  
+39. Generate the first 10 numbers of the Fibonacci Sequence
+
+			//Expected: 0 1 1  2 3 5 8 13 21 34
+
+40. 
+
+
+
+
+
+
+
+
+
+
+

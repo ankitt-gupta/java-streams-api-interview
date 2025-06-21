@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class StreamApiQuestions {
 
@@ -410,83 +411,69 @@ public class StreamApiQuestions {
 		// Given:
 		List<Integer> num30 = Arrays.asList(1, 2, 3, 4, 5);
 		// Expected: O/P: 15
-		System.out.println( "Find the sum of all the elements in a list : " + num30.stream().collect(Collectors.summingInt(e -> e)));
-		
-		//2nd way:
-		System.out.println("Find the sum of all the elements in a list : " + num30.stream().mapToInt(e->e).sum());
+		System.out.println("Find the sum of all the elements in a list : "
+				+ num30.stream().collect(Collectors.summingInt(e -> e)));
+
+		// 2nd way:
+		System.out.println("Find the sum of all the elements in a list : " + num30.stream().mapToInt(e -> e).sum());
 
 //31. Sort a list of strings in alphabetical order.
 
-		//Given I/P: 
+		// Given I/P:
 		List<String> str31 = Arrays.asList("Zudio", "Puma", "Addidas", "MAC", "H&M");
-		//O/P: [Addidas, H&M, MAC, Puma, Zudio]
-		
+		// O/P: [Addidas, H&M, MAC, Puma, Zudio]
+
 		System.out.println(str31.stream().sorted().collect(Collectors.toList()));
 
 //32. Find the kth smallest element in a list of integers.
 
-		//Given I/P: 
-		List<Integer> list32 = Arrays.asList(7,1,6,2,1,3,4,5);
+		// Given I/P:
+		List<Integer> list32 = Arrays.asList(7, 1, 6, 2, 1, 3, 4, 5);
 		int k = 3;
-		//Expected O/P: [2]
-		System.out.println(
-		list32.stream().sorted().collect(Collectors.toList()).subList(k-1, k));
-		//OR
-		System.out.println("Better Approach : " + 
-				list32.stream().sorted().skip(k-1).findFirst().get());
+		// Expected O/P: [2]
+		System.out.println(list32.stream().sorted().collect(Collectors.toList()).subList(k - 1, k));
+		// OR
+		System.out.println("Better Approach : " + list32.stream().sorted().skip(k - 1).findFirst().get());
 
 //33. Remove all non-numeric characters from a list.
 
-		//Given I/P:
+		// Given I/P:
 		List<String> list = Arrays.asList("a1b2c3", "1a2b3c", "123abc");
-		//Expected: O/P: [123, 123, 123]
+		// Expected: O/P: [123, 123, 123]
 
-		System.out.println(
-		list.stream()
-		    .map(e -> e.replaceAll("[^0-9]", "")) //"[a-z]" or "[^0-9]"
-		    . collect(Collectors.toList())
-				);
+		System.out.println(list.stream().map(e -> e.replaceAll("[^0-9]", "")) // "[a-z]" or "[^0-9]"
+				.collect(Collectors.toList()));
 
 //34. Find and print strings containing only digits.
 
-		//Given: 
-		List<String> list34 = Arrays.asList("123","abc","123abc","45");
-		//Expected: [123,45]
-		
-		System.out.println(
-		list34.stream()
-		      .filter(e -> e.matches("[0-9]+"))
-		      .collect(Collectors.toList())
-		);
+		// Given:
+		List<String> list34 = Arrays.asList("123", "abc", "123abc", "45");
+		// Expected: [123,45]
+
+		System.out.println(list34.stream().filter(e -> e.matches("[0-9]+")).collect(Collectors.toList()));
 
 //35. Convert a list of strings to uppercase.
 
-		//Given I/P: 
+		// Given I/P:
 		List<String> list35 = Arrays.asList("breaking bad", "game of thrones", "big bang theory");
-		//Expected O/P: [BREAKING BAD, GAME OF THRONES, BIG BANG THEORY]
-		System.out.println(
-		list35.stream().map(e -> e.toUpperCase()).collect(Collectors.toList())
-		);
-		
+		// Expected O/P: [BREAKING BAD, GAME OF THRONES, BIG BANG THEORY]
+		System.out.println(list35.stream().map(e -> e.toUpperCase()).collect(Collectors.toList()));
+
 //36. Calculate the average of all the numbers.
 
-		//Given I/P: 
-		List<Integer> list36 = Arrays.asList(1,2,3,4,5);
-		//Expected O/P: 3.0
-		System.out.println(
-				list36.stream().mapToInt(e -> e).average().getAsDouble()
-				);
+		// Given I/P:
+		List<Integer> list36 = Arrays.asList(1, 2, 3, 4, 5);
+		// Expected O/P: 3.0
+		System.out.println(list36.stream().mapToInt(e -> e).average().getAsDouble());
 
 //37. Find the intersection of two lists using Java streams
 
-		//Given I/P: 
-		List<Integer> list37 = Arrays.asList(1,2,3,4,5);
-		List<Integer> listt37 = Arrays.asList(3,5,6,7);
-		//Expected O/P: [3, 5]
-		
-		System.out.println(
-		list37.stream().filter(e -> listt37.contains(e)).collect(Collectors.toList())
-				);
+		// Given I/P:
+		List<Integer> list37 = Arrays.asList(1, 2, 3, 4, 5);
+		List<Integer> listt37 = Arrays.asList(3, 5, 6, 7);
+		// Expected O/P: [3, 5]
+
+		System.out.println(list37.stream().filter(e -> listt37.contains(e)).collect(Collectors.toList()));
 
 //38. There is a list of Employee objects having field name and email. Find the list of domains( gmail.com, yahoo.com etc.)
 //		And the occurrences of each domain.
@@ -494,51 +481,88 @@ public class StreamApiQuestions {
 		class Employee {
 			String name;
 			String email;
+
 			public Employee(String name, String email) {
 				this.name = name;
 				this.email = email;
 			}
+
 			public String getName() {
 				return name;
 			}
+
 			public void setName(String name) {
 				this.name = name;
 			}
+
 			public String getEmail() {
 				return email;
 			}
+
 			public void setEmail(String email) {
 				this.email = email;
 			}
+
 			@Override
 			public String toString() {
 				return "Employee [name=" + name + ", email=" + email + "]";
-			}			
+			}
 		}
-		
-		//Given emp object:
+
+		// Given emp object:
 		Employee e1 = new Employee("Sam", "sam@gmail.com");
 		Employee e2 = new Employee("Adam", "adam@yahoo.com");
 		Employee e3 = new Employee("Peter", "peter@gmail.com");
-		//Expected: [@gmail.com = 2, @yahoo.com = 1]
-		
+		// Expected: [@gmail.com = 2, @yahoo.com = 1]
+
 		List<Employee> employees38 = new ArrayList<>();
 		employees38.add(e1);
 		employees38.add(e2);
 		employees38.add(e3);
-		
-		System.out.println(" -- " +
-		employees38.stream()
-				   .map(e -> e.getEmail().substring(e.getEmail().indexOf("@")))
-				   .collect(Collectors.groupingBy(
-						   Function.identity(),
-						   Collectors.counting()
-				))
-		);
-		
-		
-		
-		
+
+		System.out.println("Find the list of domains number of occurance : "
+				+ employees38.stream().map(e -> e.getEmail().substring(e.getEmail().indexOf("@")))
+						.collect(Collectors.groupingBy(Function.identity(), Collectors.counting())));
+
+//39. Generate the first 10 numbers of the Fibonacci Sequence 
+
+		// Expected: 0 1 1 2 3 5 8 13 21 34
+
+		System.out.println(
+				"Fibonacci Sequence : " + Stream.iterate(new int[] { 0, 1 }, f -> new int[] { f[1], f[0] + f[1] })
+						.limit(10).map(f -> String.valueOf(f[0])).collect(Collectors.joining(", ")));
+
+		// Explanation:
+
+		// Stream.iterate(new int[]{0, 1}, ...):
+		// new int[]{0, 1}: This is the initial seed for the stream. It's an int array
+		// representing [previous_fib, current_fib]. For the first iteration, it
+		// represents [F0, F1].
+		// f -> new int[]{f[1], f[0] + f[1]}: This is the UnaryOperator<T> that
+		// generates the next element in the stream based on the current one (f).
+		// f[1] becomes the previous_fib for the next pair.
+		// f[0] + f[1] calculates the current_fib for the next pair (the sum of the
+		// previous two).
+		// So, if f is [0, 1], the next element generated is [1, 0+1] = [1, 1].
+		// If f is [1, 1], the next element generated is [1, 1+1] = [1, 2].
+		// If f is [1, 2], the next element generated is [2, 1+2] = [2, 3].
+		// And so on, generating pairs like [0,1], [1,1], [1,2], [2,3], [3,5], [5,8],
+		// ...
+		// .limit(limit): This is an intermediate operation that truncates the infinite
+		// stream generated by iterate to the specified limit number of elements.
+		// .map(f -> f[0]): Since each element in the stream is an int[] pair
+		// ([previous_fib, current_fib]), and we only want the actual Fibonacci number
+		// (which is the previous_fib for the next iteration, but the current_fib of
+		// this iteration when considering the sequence), we extract f[0].
+		// For [0,1], we get 0.
+		// For [1,1], we get 1.
+		// For [1,2], we get 1.
+		// For [2,3], we get 2.
+		// This extracts the desired Fibonacci sequence: 0, 1, 1, 2, 3, 5, ...
+		// .forEach(System.out::println): This is a terminal operation that prints each
+		// element of the resulting stream.
+
+// 40.  
 	}
 
 }
